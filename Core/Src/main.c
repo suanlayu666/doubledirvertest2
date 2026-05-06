@@ -256,7 +256,7 @@ int main(void)
 		sprintf(dis_str, "%.1fcm", d);
 		OLED_ShowString(3, 9, "Dis:");
 		OLED_ShowString(3, 13, dis_str);
-		if(d <= 25)
+		if(d <= 40)
 		{
 			final_turn = 2;
 		}
