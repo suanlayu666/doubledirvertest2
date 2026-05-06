@@ -254,8 +254,8 @@ int main(void)
 		float d = Get_Distance();
 		char dis_str[16];
 		sprintf(dis_str, "%.1fcm", d);
-		OLED_ShowString(3, 9, "Dis:");
-		OLED_ShowString(3, 13, dis_str);
+		OLED_ShowString(3, 10, "Dis:");
+		OLED_ShowString(3, 14, dis_str);
 		if(d <= 40)
 		{
 			final_turn = 2;
