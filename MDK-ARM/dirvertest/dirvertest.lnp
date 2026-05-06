@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"dirvertest\startup_stm32f103xb.o"
+"dirvertest\main.o"
+"dirvertest\stm32f1xx_it.o"
+"dirvertest\stm32f1xx_hal_msp.o"
+"dirvertest\stm32f1xx_hal_gpio_ex.o"
+"dirvertest\stm32f1xx_hal_tim.o"
+"dirvertest\stm32f1xx_hal_tim_ex.o"
+"dirvertest\stm32f1xx_hal.o"
+"dirvertest\stm32f1xx_hal_rcc.o"
+"dirvertest\stm32f1xx_hal_rcc_ex.o"
+"dirvertest\stm32f1xx_hal_gpio.o"
+"dirvertest\stm32f1xx_hal_dma.o"
+"dirvertest\stm32f1xx_hal_cortex.o"
+"dirvertest\stm32f1xx_hal_pwr.o"
+"dirvertest\stm32f1xx_hal_flash.o"
+"dirvertest\stm32f1xx_hal_flash_ex.o"
+"dirvertest\stm32f1xx_hal_exti.o"
+"dirvertest\stm32f1xx_hal_uart.o"
+"dirvertest\system_stm32f1xx.o"
+"dirvertest\oled.o"
+"dirvertest\ds18b20.o"
+--strict --scatter "dirvertest\dirvertest.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "dirvertest.map" -o dirvertest\dirvertest.axf
