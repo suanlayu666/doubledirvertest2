@@ -248,7 +248,7 @@ int main(void)
       uint16_t base_ccr = (speed == 0) ? 0 : (speed < 20 ? 20 : speed);
 	
 	uint8_t final_turn = bt_turn;
-	//蓝牙&&超声波避障
+	//蓝牙与超声波避障
 	if(mode == 2)
 	{
 		float d = Get_Distance();
