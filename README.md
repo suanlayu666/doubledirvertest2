@@ -1,5 +1,7 @@
 🏎️ STM32 智能小车控制系统
 一个基于 STM32F103 的多模式智能小车项目，实现了温控调速、本地控制、蓝牙遥控以及自动避障功能。
+<img width="1920" height="1440" alt="小车2" src="https://github.com/user-attachments/assets/5404ed44-5713-4ee4-8061-cabf05bd1829" />
+
 
 🌟 项目亮点
    多模式状态机设计：系统状态在 AUTO、HAND、BLUE 三种模式间灵活切换。
@@ -10,7 +12,7 @@
    本地控制：通过 GPIO 扫描 GPIOB 的引脚（按键 0 和 10）实现速度的步进加减（±5%)。
    远程控制：使用 USART 监听蓝牙指令（如 F/B/L/R/S, +/-），实现无线操控。
    实时反馈：优化后的 OLED 驱动（利用 sprintf），动态刷新 PWM 占比、温度、方向（FWD/REV）及距离。
-   
+
 模块              型号              连接引脚              备注
 主控板       STM32F103C8T6             -               72MHz 系统时钟
 电机驱动         L298N                 -               12V 动力电源
@@ -20,6 +22,8 @@
 蓝牙            HC-05               USART1             无线遥控
 
 算法逻辑核心解析
+<img width="1408" height="768" alt="39F2610EA065EA07EA6A87EFBC4F9E92" src="https://github.com/user-attachments/assets/530f50f4-066c-433a-85d2-53246ffa0b81" />
+
 主循环（Main Loop）：根据变量 mode 在 0 (AUTO)、1 (HAND)、2 (BLUE) 三个不同的逻辑块之间切换。
 模式2：蓝牙遥控 + 自动避障：优先级逻辑：首先通过蓝牙串口中断更新 bt_turn。
 避障接管算法：当超声波测距距离 $d \le 25cm$ 时，强制将局部变量 final_turn 设为 2（右转），覆盖蓝牙指令，直至距离安全。
